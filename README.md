@@ -18,38 +18,43 @@ Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina.
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-
 ## Configuração do Ambiente
 
 1. **Clone o repositório:**
-
+   
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/jacsonbleite/login_mfa_symfony.git
+   cd login_mfa_symfony
    ```
 
-
-2. **Copie o arquivo .env.example para .env:**
-
+2. **Copie o arquivo .env.example para .env e preencha-o:**
+   
    ```bash
    cp ./symfony/.env.example ./symfony/.env
    ```
 
-
-3. **Inicie os containers Docker:**
-
+3. **Inicie o projeto:**
+   
+   1. **Primeira execução**
+   
    ```bash
    docker-compose up --build
    ```
+   
+   2. **Nas próximas**
+   
+   ```bash
+   docker-compose up -d
+   ```
 
 4. **Acesse a aplicação**
-
+   
    * Symfony: http://localhost:8080
    * pgAdmin: http://localhost:5050
 
-
 ## Estrutura do projeto
 
+```
 project-root/
 ├── docker-compose.yml
 ├── apache/
@@ -62,4 +67,4 @@ project-root/
 │   └── ... (outros arquivos do Symfony)
 └── pgadmin/
     └── Dockerfile
-
+```
